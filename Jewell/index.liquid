@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <title>Header</title>
+</head>
+<body>
+
+<section id="header">
+  <a href="#"><img src="{{ 'Images/Logo.png' | asset_url }}" class="logo" alt=""/></a>
+  <div>
+    <ul id="navbar">
+      <li><a href="{{ '/' | url_for }}">Home</a></li>
+      <li><a href="{{ 'collections/all' | url_for }}">Shop</a></li>
+      <li><a href="{{ 'blogs/news' | url_for }}">Blog</a></li>
+      <li><a href="{{ 'pages/about-us' | url_for }}">About</a></li>
+      <li><a href="{{ 'cart' | url_for }}"><i class="fas fa-shopping-bag" style="color:black"></i></a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="home">
+  <h4>Trade-in-offer</h4>
+  <h2>Super value deals</h2>
+  <h1>on all Jwelleries</h1>
+  <p>Save more with coupons</p>
+  <button>Shop now</button>
+</section>
+
+<section id="feature" class="section-p1">
+  {% for product in collections.featured_products.products limit: 6 %}
+  <div class="fe-box">
+    <img src="{{ product.featured_image | img_url: 'medium' }}">
+    <h6>Price-${{ product.price }}</h6>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="Product1" class="section-p1">
+  <h2>Featured Products</h2>
+  <p>Summer collections with modern design</p>
+  <div class="pro-container">
+    <!-- First Product -->
+    {% for product in collections.featured_products.products limit: 3 %}
+    <div class="pro">
+      <img src="{{ product.featured_image | img_url: 'medium' }}">
+      <div class="des">
+        <span>{{ product.title }}</span>
+        <h4>Price: ${{ product.price }}</h4>
+        <h5>{{ product.description }}</h5>
+        <div class="star">
+          {% for i in (1..5) %}
+          {% if i <= product.rating %}
+          <i class="fas fa-star"></i>
+          {% else %}
+          <i class="far fa-star"></i>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <span>Only {{ product.inventory_quantity }} left</span>
+      </div>
+      <a href="{{ product.url }}"><i class="fal fa-shopping-cart"></i></a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+</body>
+</html>

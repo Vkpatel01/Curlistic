@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+h1 {
+  color: black;
+  line-height: 64px;
+  font-size: 48px;
+}
+
+h2 {
+  color: black;
+  line-height: 54px;
+  font-size: 48px;
+}
+
+h4 {
+  color: black;
+  font-size: 20px;
+}
+
+h6 {
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #424135;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+#navbar li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover {
+  color: chocolate;
+}
+
+/*Home Page*/
+#home {
+  background-image: url(images.jpeg);
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top 20% right 0;
+  padding: 0 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#home h4 {
+  padding-bottom: 15px;
+}
+
+#home h1 {
+  color: rgb(114, 50, 3);
+}
+
+#home button {
+  background-color: rgb(214, 187, 187);
+  color: rgb(0, 0, 0);
+  border: 0;
+  padding: 14px 80px 14px 65px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+#feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#feature .fe-box {
+  width: 180px;
+  height: 200px;
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+  border: 1px solid #cce7d0;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+#feature .fe-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#feature .fe-box h6 {
+  display: inline-block;
+  padding: 9px 8px 6px 8px;
+  line-height: 1;
+  border-radius: 4px;
+  background-color: #fddde4;
+}
+
+/* Styling for the additional sets of featured products */
+
+#Product1 {
+  margin-top: 40px;
+}
+
+#Product1 h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#Product1 p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.pro-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.pro {
+  width: 45%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.pro img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.des {
+  text-align: center;
+}
+
+.des span {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.des h5 {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.star {
+  color: #f1c40f;
+  margin-bottom: 10px;
+}
+
+.star i {
+  margin-right: 5px;
+}
+
+h4 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+a i {
+  color: #3498db;
+  font-size: 24px;
+}
+
+a i:hover {
+  color: #2980b9;
+}
+
+/* Media Queries */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  #header {
+    padding: 20px;
+  }
+
+  .section-p1 {
+    padding: 20px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  #navbar {
+    flex-direction: column;
+  }
+
+  #navbar li {
+    padding: 10px 0;
+  }
+
+  #navbar li a {
+    font-size: 14px;
+  }
+
+  #home {
+    padding: 40px;
+  }
+
+  #home h1 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  #home button {
+    padding: 14px 40px;
+  }
+
+  #feature {
+    justify-content: center;
+  }
+
+  #feature .fe-box {
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  #feature .fe-box img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #feature .fe-box h6 {
+    padding: 5px 8px;
+  }
+}
+
+/* For smaller screens or devices */
+@media (max-width: 375px) {
+  #feature .fe-box {
+    width: calc(100% - 20px);
+    margin: 15px 10px;
+  }
+}
